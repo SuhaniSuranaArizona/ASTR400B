@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[bottom=2 cm, right=1.5cm, left=2 cm, top=1 cm]{geometry}
+\usepackage{booktabs}
+\title{ASTR400B Homework 3}
+\author{Suhani Surana}
+\date{February 2025}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Mass Breakdown of the local group}
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.2} % Increase row spacing
+    \begin{tabular}{lccccc}
+        \toprule
+        Galaxy Name & Halo Mass ($10^{12} M_{\odot}$) & Disk Mass ($10^{12} M_{\odot}$) & Bulge Mass ($10^{12} M_{\odot}$) & Total Mass ($10^{12} M_{\odot}$) & $f_{\text{bar}}$ \\
+        \midrule
+        MW & 1.975 & 0.075 & 0.01 & 2.06 & 0.0413\\
+        M31 & 1.921 & 0.12 & 0.019 & 2.06 & 0.067 \\
+        M33 & 0.187 & 0.0093 & 0 &  0.1963  & 0.047 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Mass Breakdown of the local group}
+    \label{tab:galaxy_masses}
+\end{table}
+\subsection{Calculations} 
+\textbf{{MW (Milky Way)}}
+
+Total mass:
+
+\[
+\text{Total Mass} = 1.975 + 0.075 + 0.01 = \boxed{2.06 \times 10^{12} M_{\odot}}
+\]
+
+Baryon fraction:
+
+\[
+f_{\text{bar}} = \frac{0.075 + 0.01}{2.06} = \frac{0.085}{2.06} \approx \boxed{0.0413}
+\]
+
+\textbf{{MW31}}
+
+Total mass:
+
+\[
+\text{Total Mass} =  1.921 + 0.12 + 0.019 = \boxed{2.06 \times 10^{12} M_{\odot}}
+\]
+
+Baryon fraction:
+
+\[
+f_{\text{bar}} = \frac{0.12 + 0.019}{2.06} = \frac{0.139}{2.06} \approx \boxed{0.067}
+\]
+
+\textbf{{MW33}}
+
+Total mass:
+
+\[
+\text{Total Mass} = 0.187 + 0.0093 + 0 = \boxed{0.1963\times 10^{12} M_{\odot}}
+\]
+
+Baryon fraction:
+
+\[
+f_{\text{bar}} = \frac{0.0093 + 0}{0.1963} = \frac{0.0093}{0.1963} \approx \boxed{0.0474}
+\]
+
+\textbf{{Local Group}}
+
+Total mass:
+
+\[
+\text{Total Mass} = 2.06 + 2.06 + 0.1963  = \boxed {4.3163 \times 10^{12} M_{\odot}}
+\]
+
+Baryon fraction:
+
+\[
+f_{\text{bar}} = \frac{0.085 + 0.139 + 0.0093}{4.3163} = \frac{0.2333}{4.3163} \approx \boxed{0.054}
+\]
+
+\section{Questions}
+1. The total mass is exactly the same. In both of them, halo mass dominates the total mass.
+\newline \newline
+2. M31's stellar mass is 1.635 times MW's stellar mass. Thus, M31 would be more luminious as compared to MW.
+\newline \newline
+3. MW's dark matter mass is 1.02 times the M31's dark matter mass. This is surprising as M31 has a lot more stellar mass as compared to MW. Thus, it suggests they might have different rates of stellar formation in the past or different magnitudes of feedback processes.
+\newline \newline
+4. MW has 4.13 \% mass locked up in baryons. M31 has 6.7 \% mass locked up in baryons. M33 has 4.74 \% mass locked up in baryons.
+AGM release a lot of gas into the IGM, which could potentially lower this fraction. This could also be due to other feedback processes or missing baryons.
+\end{document}
