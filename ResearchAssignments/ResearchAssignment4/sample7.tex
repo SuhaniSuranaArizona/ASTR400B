@@ -1,0 +1,317 @@
+
+
+%% Beginning of file 'sample7.tex'
+%%
+%% Version 7. Created January 2025.  
+%%
+%% AASTeX v7 calls the following external packages:
+%% times, hyperref, ifthen, hyphens, longtable, xcolor, 
+%% bookmarks, array, rotating, ulem, and lineno 
+%%
+%% RevTeX is no longer used in AASTeX v7.
+%%
+
+\documentclass[twocolumn,linenumbers,trackchanges]{aastex7}
+%%
+%% This initial command takes arguments that can be used to easily modify 
+%% the output of the compiled manuscript. Any combination of arguments can be 
+%% invoked like this:
+%%
+%% \documentclass[argument1,argument2,argument3,...]{aastex7}
+%%
+%% Six of the arguments are typestting options. They are:
+%%
+%%  twocolumn   : two text columns, 10 point font, single spaced article.
+%%                This is the most compact and represent the final published
+%%                derived PDF copy of the accepted manuscript from the publisher
+%%  default     : one text column, 10 point font, single spaced (default).
+%%  manuscript  : one text column, 12 point font, double spaced article.
+%%  preprint    : one text column, 12 point font, single spaced article.  
+%%  preprint2   : two text columns, 12 point font, single spaced article.
+%%  modern      : a stylish, single text column, 12 point font, article with
+%% 		  wider left and right margins. This uses the Daniel
+%% 		  Foreman-Mackey and David Hogg design.
+%%
+%% Note that you can submit to the AAS Journals in any of these 6 styles.
+%%
+%% There are other optional arguments one can invoke to allow other stylistic
+%% actions. The available options are:
+%%
+%%   astrosymb    : Loads Astrosymb font and define \astrocommands. 
+%%   tighten      : Makes baselineskip slightly smaller, only works with 
+%%                  the twocolumn substyle.
+%%   times        : uses times font instead of the default.
+%%   linenumbers  : turn on linenumbering. Note this is mandatory for AAS
+%%                  Journal submissions and revisions.
+%%   trackchanges : Shows added text in bold.
+%%   longauthor   : Do not use the more compressed footnote style (default) for 
+%%                  the author/collaboration/affiliations. Instead print all
+%%                  affiliation information after each name. Creates a much 
+%%                  longer author list but may be desirable for short 
+%%                  author papers.
+%% twocolappendix : make 2 column appendix.
+%%   anonymous    : Do not show the authors, affiliations, acknowledgments,
+%%                  and author contributions for dual anonymous review.
+%%  resetfootnote : Reset footnotes to 1 in the body of the manuscript.
+%%                  Useful when there are a lot of authors and affiliations
+%%		    in the front matter.
+%%   longbib      : Print article titles in the references. This option
+%% 		    is mandatory for PSJ manuscripts.
+%%
+%% Since v6, AASTeX has included \hyperref support. While we have built in 
+%% specific %% defaults into the classfile you can manually override them 
+%% with the \hypersetup command. For example,
+%%
+%% \hypersetup{linkcolor=red,citecolor=green,filecolor=cyan,urlcolor=magenta}
+%%
+%% will change the color of the internal links to red, the links to the
+%% bibliography to green, the file links to cyan, and the external links to
+%% magenta. Additional information on \hyperref options can be found here:
+%% https://www.tug.org/applications/hyperref/manual.html#x1-40003
+%%
+%% The "bookmarks" has been changed to "true" in hyperref
+%% to improve the accessibility of the compiled pdf file.
+%%
+%% If you want to create your own macros, you can do so
+%% using \newcommand. Your macros should appear before
+%% the \begin{document} command.
+%%
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+\usepackage{float}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+%%
+%% Running header information. A short title on odd pages and 
+%% short author list on even pages. Note that this
+%% information may be modified in production.
+%%\shorttitle{AASTeX v7 Sample article}
+%%\shortauthors{The Terra Mater collaboration}
+%%
+%% Include dates for submitted, revised, and accepted.
+%%\received{February 1, 2025}
+%%\revised{March 1, 2025}
+%%\accepted{\today}
+%%
+%% Indicate AAS Journal the manuscript was submitted to.
+%%\submitjournal{PSJ}
+%% Note that this command adds "Submitted to " the argument.
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+%% \watermark{text}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%% \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Use this command to indicate a subdirectory where figures are located.
+%%\graphicspath{{./}{figures/}}
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+\title{Kinematics of the the Merger Remnant}
+%%\title{Evolution of the Rotation Curve (Observed and Mass-Derived) and Velocity Dispersion Profile of the Merger Remnany}%%
+
+%% A significant change from AASTeX v6+ is in the author blocks. Now an email
+%% address is required for each author. This means that each author requires
+%% at least one of the following:
+%%
+%% \author
+%% \affiliation
+%% \email
+%%
+%% If these three commands are not available for each author, the latex
+%% compiler will issue an error and if you force the latex compiler to continue,
+%% it will generate an incomplete pdf.
+%%
+%% Multiple \affiliation commands are allowed and authors can also include
+%% an optional \altaffiliation to indicate a status, i.e. Hubble Fellow. 
+%% while affiliations are indexed as footnotes, altaffiliations are noted with
+%% with a non-numeric footnote that is set away from the numeric \affiliation 
+%% footnotes. NOTE that if an \altaffiliation command is used it must 
+%% come BEFORE the \affiliation call, right after the \author command, in 
+%% order to place the footnotes in the proper location. Because non-numeric
+%% symbols are used, \altaffiliation should be used sparingly.
+%%
+%% In v7 the \author command takes an optional argument which provides 
+%% additional metadata about the author. Authors can provide the 16 digit 
+%% ORCID, the surname (family or last) name, the given (first or fore-) name, 
+%% and a name suffix, e.g. "Jr.". The syntax is:
+%%
+%% \author[orcid=0000-0002-9072-1121,gname=Gregory,sname=Schwarz]{Greg Schwarz}
+%%
+%% This name metadata in not shown, it is only for parsing by the peer review
+%% system so authors can be more easily identified. This name information will
+%% also be sent to the publisher so they can include it in the CROSSREF 
+%% metadata. Including an orcid will hyperlink the author name to the 
+%% author's ORCID page. Note that  during compilation, LaTeX will do some 
+%% limited checking of the format of the ID to make sure it is valid. If 
+%% the "orcid-ID.png" image file is  present or in the LaTeX pathway, the 
+%% ORCID icon will appear next to the authors name.
+%%
+%% Even though emails are now required for each author, the \email does not
+%% produce output in the compiled manuscript unless the optional "show" command
+%% is used. For example,
+%%
+%% \email[show]{greg.schwarz@aas.org}
+%%
+%% All "shown" emails are show in the bottom left of the first page. Due to
+%% space constraints, only a few emails should be shown. 
+%%
+%% To identify a corresponding author, use the \correspondingauthor command.
+%% The command appends "Corresponding Author: " to the argument it appears at
+%% the bottom left of the first page like the output from \email. 
+
+
+\author{Suhani Surana}
+\affiliation{University of Arizona, Tucson}
+\email{suhanisurana@arizona.edu}
+
+
+%% Use the \collaboration command to identify collaborations. This command
+%% takes an optional argument that is either a number or the word "all"
+%% w
+
+%% Keywords should appear after the \end{abstract} command. 
+%% The AAS Journals now uses Unified Astronomy Thesaurus (UAT) concepts:
+%% https://astrothesaurus.org
+%% You will be asked to selected these concepts during the submission process
+%% but this old "keyword" functionality is maintained in case authors want
+%% to include these concepts in their preprints.
+%%
+%% You can use the \uat command to link your UAT concepts back its source.
+\keywords{{Local Group} --- {Major Merger} --- { Rotation Curve} --- {Velocity Dispersion} --- {Galaxy} --- {Galaxy Evolution}}
+
+%% From the front matter, we move on to the body of the paper.
+%% Sections are demarcated by \section and \subsection, respectively.
+%% Observe the use of the LaTeX \label
+%% command after the \subsection to give a symbolic KEY to the
+%% subsection for cross-referencing in a \ref command.
+%% You can use LaTeX's \ref and \label commands to keep track of
+%% cross-references to sections, equations, tables, and figures.
+%% That way, if you change the order of any elements, LaTeX will
+%% automatically renumber them.
+
+\section{Introduction} 
+
+Local group consists of the Milky Way (MW) and Andromeda (M31). The Local Group's three most massive members are all spiral galaxies: the Milky Way (MW), Andromeda (M31), and Triangulum (M33), with their masses in a ratio of \(\sim \) 10:10:1.  Local Group, which contains more
+than 80 galaxies and has a total mass of roughly \( 3.5 \times 10^{12} \, M_\odot \)
+(\cite{2014ApJ...793...91G}). They are on a collision course and will have their closest approach in about 4.3 Gyrs and a series of close approaches later. The future evolution of the Local Group is primarily shaped by the 
+major merger between MW and M31.
+Studing the kinematics of such merger remnants will help us to placing the Local Group in the broader context of galaxy formation and evolution.  A major merger refers to the gravitational collision and subsequent combination of two galaxies of roughly equal size and mass. The study of these major mergers can help us to understand the place of the Local Group in the cosmic evolution and can help us to further our understanding of the properties of cold dark matter.
+
+
+A \textbf{galaxy} is a gravitationally bound set of stars whose properties cannot be explained by a combination of baryons (gas, dust and stars) and Newton’s laws of gravity (\cite{Willman_2012}). \textbf{Galaxy evolution} is the process by which galaxies change over time. This includes internal changes like star formation, aging stars, and gas depletion, as well as external events such as mergers and collisions. These processes affect a galaxy’s color, brightness, size, shape, and structure, leading to features like tidal tails, bridges, and changes in the interstellar medium. By investigating the stellar kinematics in simulated MW/M31 merger remnants, we can better constrain the physical mechanisms responsible for shaping the morphological and dynamical outcomes of major mergers like MW-M31.   Also, the MW-M31 merger is expected to result in a transition from two well-structured spiral galaxies to a more spheroidal or elliptical remnant (\cite{1972ApJ...178..623T}). However recent studies have showed that
+disc galaxies could also be created from a major merger.  Studying the resulting stellar kinematics—particularly of the bulge and disk components—provides valuable insight into the structural evolution of such galaxies.  Also,  investigating the kinematics of the stellar disk and bulge in the merger remnant tells us  how angular momentum is redistributed and whether disk-like structures can reform after such a major merger event.
+
+The merger between MW and M31 has a closest approach of $31.0^{+38.0}_{-19.8}$ kpc (\cite{vandermarel2012}). The resulting merger remnant will likely resemble an elliptical galaxy. M33 is expected to settle into orbit around the remnant, although there are non-negligible probabilities of a direct hit with the MW or even ejection from the Local Group (\cite{vandermarel2012}).
+The figure above illustrates the kinematic signatures of merger remnants, showing how properties such as ellipticity, and rotation vary with time. This supports findings from simulations where dissipational (gas-rich) mergers produce more oblate, rotating, and isotropic remnants, matching observed features of low-luminosity elliptical galaxies \citep{Cox_2006}. Mergers (and in particular, major events) can result in S0 remnants with realistically coupled bulge-disc structures in less than \(\sim \)3 Gyr (\cite{refId0}). These remnants also lie on a fundamental plane (FP). Collisionless hierarchical mergers reproduce this FP with realistic scatter and tilt, the latter driven by increasing dark matter fraction in more massive remnants (\cite{Taranu_2015}). 
+
+%% The "ht!" tells LaTeX to put the figure "here" first, at the "top" next
+%% and to override the normal way of calculating a float position.
+%% The asterisk after "figure" tells the compiler to span multiple columns
+%% if a two column style is selected.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{Screenshot 2025-04-11 at 5.28.28 PM.png}
+    \caption{Time evolution of structural and kinematic properties of a major merger remnant: semimajor axis $a$, half-mass radius $R_e$, ellipticity $\epsilon$, major axis rotation speed $V_{\mathrm{maj}}$, velocity dispersion $\sigma$, and the ratio $V_{\mathrm{maj}}/\sigma$. Based on simulations of identical disk galaxy mergers, relevant to MW–M31 remnant studies. Adapted from \cite{Cox_2006}. Settled dynamically within \(\sim \)1 Gyr. Retained some disk-like features (moderate ellipticity, nonzero V/$\sigma$). V/$\sigma$ stays between \(\sim \)0.6 and \(\sim \)0.75, with a mild increasing trend. Thus, system is pressure supported (elliptical-like)}
+    \label{fig:kinematics}
+\end{figure}
+
+Despite considerable progress in understanding the MW--M31 merger, several important questions remain open. Simulations show that gas-rich mergers produce more rotationally supported, isotropic remnants, while dry mergers result in slowly rotating, anisotropic systems (\cite{Cox_2006}). However, it is still unclear which specific combination of gas content, orbital geometry, and feedback processes will dominate in the actual MW--M31 event.  (\citep{vandermarel2012}). Addressing these questions requires high-resolution simulations. My project  specifically contributes to this effort by analyzing the expected kinematic profiles of the MW-M31 merger remnant using outputs from such simulations (\cite{vandermarel2012}), to better constrain its future rotational support and velocity dispersions.
+
+
+\section{This Project} \label{sec:style}
+
+The topic of this project is Stellar disk/bulge kinematics after a major merger. I would be particularly looking at the evolution of the rotation curve. The rotation curve of a disc galaxy is a plot of the orbital speeds of visible stars or gas in that galaxy as a function of their radial distance from that galaxy's centre (\cite{enwiki:1284313750})
+The “observed” rotation curve and the mass-derived rotation curve based on the enclosed mass profile would be compared which will offer insights into how well observational proxies trace underlying mass distributions after a merger. Furthermore, the project aims to analyze the velocity dispersion components of the stellar populations in both the disk and bulge regions. This is essential for understanding whether the remnant will settle into a pressure-supported elliptical-like structure or retain significant rotational support. 
+
+The open question of whether the gas rich merger is more rotationally supported or is pressure supported will be understood by this project. We will also come to know the sense of rotation that this merger remnant exhibits post merger. 
+
+Understanding post-merger stellar kinematics is crucial to advancing our knowledge of galaxy evolution. The kinematics of merger remnants affect where they lie on the Tully–Fisher and Fundamental Plane.  By comparing these results with observations,we can answer whether such remnants preserve rotational properties or rapidly settle into isotropic, pressure-supported systems which will tell us about fate of the MW–M31 remnant, Local group and the general formation knowledge of early-type galaxies.
+
+\section{Methodology} \label{sec:style}
+An N-body simulation refers to a computational technique in which the motion of a large number of particles is calculated by numerically solving their mutual gravitational interactions over time. The N-Body simulation used here is by \cite{vandermarel2012}. They conducted collisionless N-body simulations of the MW--M31--M33 system, modeling the gravitational interactions between stars and dark matter components. The simulations were carried out using the GADGET-3 code. In the simulations, the dark halo of each galaxy was represented by Hernquist density profile (\cite{osti_6696799}).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{Screenshot 2025-04-11 at 11.07.38 PM.png}
+    \caption{Steps to the project. The half mass radius method was adapted from \cite{Cox_2006}}
+    \label{fig:enter-label}
+\end{figure}
+To study the kinematics of the merger remnant, I will first identify simulation snapshots where the MW and M31 have fully merged and the system is dynamically relaxed. These snapshots will by the seperation plots in Homework 6. Using the formula (SN * 10)/0.7, I found out the snapshots numbers to be 280, 420 and 600. I will use high res as it would give me much better velocity dispersions as a function of r.
+Stellar particles belonging to the disk and bulge components of both the MW and M31 were extracted and combined into a single dataset representing the stellar body of the remnant. The center-of-mass (COM) position and velocity were computed using mass-weighted averages:
+\begin{equation}
+    \mathbf{R}_{\text{COM}} = \frac{\sum m_i \mathbf{r}_i}{\sum m_i}, \quad \mathbf{V}_{\text{COM}} = \frac{\sum m_i \mathbf{v}_i}{\sum m_i},
+\end{equation}
+where $m_i$, $\mathbf{r}_i$, and $\mathbf{v}_i$ are the mass, position, and velocity of each stellar particle. All particle coordinates were shifted into the COM frame using:
+\begin{equation}
+    \mathbf{r}_i' = \mathbf{r}_i - \mathbf{R}_{\text{COM}}, \quad \mathbf{v}_i' = \mathbf{v}_i - \mathbf{V}_{\text{COM}}.
+\end{equation}
+
+To study rotational structure, the system was reoriented so that the net angular momentum vector lies along the $z$-axis, aligning the stellar disk (if present) in the $xy$-plane. A phase-space diagram plotting the velocity $V$ against  radius was constructed to visually identify rotation trends. This diagram was color-coded to show direction of motion and extended to 10–15 kpc to encompass any outer rotational features, consistent with methods from Lab 7.
+
+Rotational support was quantified by computing both the “observed” rotation curve, defined by the mean $V$ in radial bins, and the theoretical circular speed:
+\begin{equation}
+    V_c(r) = \sqrt{\frac{G M(<r)}{r}},
+\end{equation}
+where $G$ is the gravitational constant, $M(<r)$ is the mass enclosed within radius $r$, and $r$ is the  radius in kiloparsecs. This comparison reveals the extent to which the remnant is rotationally or pressure-supported.
+
+The velocity dispersion profile was calculated in radial bins, especially within the half-mass radius, to trace how random motions vary with radius.  The half-mass radius \( R_{\mathrm{half}} \) is defined such that:
+\[
+\sum_{i: R_i < R_{\mathrm{half}}} m_i = \frac{1}{2} \sum_i m_i
+\]To further classify the kinematic state, the ratio $V/\sigma$ was determined, where $V$ is the mean rotational velocity and $\sigma$ the velocity dispersion. For each radial bin \( [r_i, r_{i+1}] \), we compute the mean azimuthal velocity \( V(r) \) and its dispersion \( \sigma(r) \).
+
+\[
+V(r) = \left< v_i \right>_r, \qquad \sigma(r) = \sqrt{\left< v_i^2 \right>_r - \left< v_i \right>_r^2}
+\]. Then, the ratio $V/\sigma$ will be plotted as a function of radius. Regions where $\max\left( \frac{V}{\sigma} \right) \gg 1$ indicate disk-like fast rotators, whereas values of $\left( \frac{V}{\sigma} \right) \ll 1$ correspond to pressure-supported ellipticals.
+
+Plots of the rotation curves, dispersion profile, and $V$ phase diagram, were plotted.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{Screenshot 2025-04-11 at 10.50.34 PM.png}
+    \caption{This is the observed velocity plotted as a function of radius and the circular velocity of the merger remnant edge on. }
+    \label{fig:enter-label}
+\end{figure}
+
+
+%% Please use the acknowledgment and contribution environments. This will 
+%% be anonomyized when the "anonymous" style option is used. 
+\begin{acknowledgments}
+I would like to thank Dr. Gurtina Besla for her invaluable guidance and inputs for the successful completion of the project. I would also like to extend my gratitude to the course TA, Himansh Rathore whose invaluable support and guidance have helped me to complete this project.
+\end{acknowledgments}
+
+
+\software{astropy 
+
+%% Appendix material should be preceded with a single \appendix command.
+%% There should be a \section command for each appendix. Mark appendix
+%% subsections with the same markup you use in the main body of the paper.
+%%
+%% Each Appendix (indicated with \section) will be lettered A, B, C, etc.
+%% The equation counter will reset when it encounters the \appendix
+%% command and will number appendix equations (A1), (A2), etc. The
+%% Figure and Table counter will not reset.
+
+
+
+\bibliography{sample7}{}
+\bibliographystyle{aasjournalv7}
+
+%% This command is needed to show the entire author+affiliation list when
+%% the collaboration and author truncation commands are used.  It has to
+%% go at the end of the manuscript.
+%\allauthors
+
+%% Include this line if you are using the \added, \replaced, \deleted
+%% commands to see a summary list of all changes at the end of the article.
+%\listofchanges
+
+\end{document}
+
+% End of file `sample7.tex'.
